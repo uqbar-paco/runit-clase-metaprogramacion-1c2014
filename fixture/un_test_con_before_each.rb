@@ -5,11 +5,11 @@ class UnTestConBeforeEach
 
   def test_valida_valor_igual_a_cuatro
     @valor = @valor + 1
-    assert_true @valor == 4
+    assert_equals 4, @valor
   end
 
   def test_valida_valor_igual_a_cinco
     @valor = @valor + 2
-    assert_true @valor == 5
+    assert_equals 5, @valor
   end
 end
