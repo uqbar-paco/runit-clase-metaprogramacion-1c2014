@@ -1,9 +1,9 @@
 module Assertions
-  def assert_true valor
-    raise 'AssertionException' unless valor
+  def assert_true(valor_obtenido)
+    raise 'AssertionException' unless valor_obtenido
   end
 
-  def assert_equals expected, actual
-    raise 'AssertionException' unless expected == actual
+  def assert_equals(valor_esperado, valor_obtenido)
+    raise 'AssertionException' unless valor_esperado == valor_obtenido
   end
 end

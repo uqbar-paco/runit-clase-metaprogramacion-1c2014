@@ -6,17 +6,18 @@ require '../fixture/un_test_con_before_each'
 require '../fixture/un_test_con_after_each'
 
 describe 'RUnit' do
-  def run_and_expect(test_class, result)
+  # Helpers para testear RUnit
+  def run_and_expect(clase_test, resultado_esperado)
     runit = RUnitRunner.new
-    resultado = runit.ejecutar_test_clase test_class
-    resultado.should == result
+    resultado = runit.ejecutar_test_clase clase_test
+    resultado.should == resultado_esperado
   end
 
-  def run_all_and_expect(result, *test_class)
+  def run_all_and_expect(resultado_esperado, *clases_test)
     runit = RUnitRunner.new
-    test_class.each {|a_test_class| runit.agregar_clase a_test_class }
+    clases_test.each {|una_clase_test| runit.agregar_clase una_clase_test }
     resultado = runit.ejecutar
-    resultado.should == result
+    resultado.should == resultado_esperado
   end
 
   it 'si le proveo un test vacio deberia correr bien' do
